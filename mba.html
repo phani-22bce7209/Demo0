@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Program Options</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;   
+      margin: 0;       
+      background: white;
+    }
+    .container {
+      background: orange;
+      width: 200px;
+      height: 300px;  /* enough height for semi-circle and boxes */
+      border-radius: 100px 100px 0 0;  /* semi-circle top */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; /* align items near bottom */
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+      color: white;
+      font-weight: bold;
+    }
+    .box {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 10px;
+      border: 2px solid white;
+      font-weight: bold;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .mca {
+      background-color: red;
+      width: 180px;
+      color: white;
+    }
+    .bca {
+      background-color: yellow;
+      width: 180px;
+      color: black;
+    }
+    .bba {
+      background-color: green;
+      color: yellow;
+      width: 180px;
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box mca">MCA</div>
+    <div class="box bca">BCA</div>
+    <div class="box bba">BBA</div>
+  </div>
+</body>
+</html>

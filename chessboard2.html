@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkerboard</title>
+  <style>
+    .checkerboard {
+      display: grid;
+      grid-template-columns: repeat(8, 50px);
+      grid-template-rows: repeat(8, 50px);
+      width: 400px;  /* 8 * 50 */
+      height: 400px; /* 8 * 50 */
+      border: 8px solid black;
+      box-sizing: content-box;
+      background-color: pink;
+    }
+    .checkerboard div {
+      width: 50px;
+      height: 50px;
+    }
+
+    /* Color black squares based on position */
+    /* Even rows: black on odd columns */
+    /* Odd rows: black on even columns */
+    /* Remember: nth-child counts all squares in a single sequence */
+
+    /* Black squares for odd rows */
+    .checkerboard div:nth-child(odd):nth-child(-n + 8),
+    .checkerboard div:nth-child(odd):nth-child(n + 17):nth-child(-n + 24),
+    .checkerboard div:nth-child(odd):nth-child(n + 33):nth-child(-n + 40),
+    .checkerboard div:nth-child(odd):nth-child(n + 49):nth-child(-n + 56) {
+      background-color: black;
+    }
+
+    /* Black squares for even rows */
+    .checkerboard div:nth-child(even):nth-child(n + 9):nth-child(-n + 16),
+    .checkerboard div:nth-child(even):nth-child(n + 25):nth-child(-n + 32),
+    .checkerboard div:nth-child(even):nth-child(n + 41):nth-child(-n + 48),
+    .checkerboard div:nth-child(even):nth-child(n + 57):nth-child(-n + 64) {
+      background-color: black;
+    }
+
+    /* Pink squares will remain default (no background needed) */
+  </style>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh; background: #eee;">
+  <div class="checkerboard">
+    <!-- 64 squares -->
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+  </div>
+</body>
+</html>

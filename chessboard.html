@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkerboard</title>
+  <style>
+    .checkerboard {
+      display: grid;
+      grid-template-columns: repeat(8, 50px);
+      grid-template-rows: repeat(8, 50px);
+      padding: 5px;
+      border: 8px solid black;
+      box-sizing: content-box;
+      background-color: white;
+    }
+
+    .checkerboard div {
+      width: 50px;
+      height: 50px;
+    }
+
+    .black {
+      background-color: black;
+    }
+
+    .pink {
+      background-color: pink;
+    }
+  </style>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh; background: #eee;">
+  <div class="checkerboard" id="board"></div>
+
+  <script>
+    const board = document.getElementById('board');
+    for (let i = 0; i < 64; i++) {
+      const square = document.createElement('div');
+      const row = Math.floor(i / 8);
+      const col = i % 8;
+      square.classList.add((row + col) % 2 === 0 ? 'pink' : 'black');
+      board.appendChild(square);
+    }
+  </script>
+</body>
+</html>
